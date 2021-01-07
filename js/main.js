@@ -1,5 +1,3 @@
-console.log('Helloworld');
-
 // HTML elements
 // grab the html elements we need using the DOM
 const gameStatus = document.querySelector('.gameStatus');
@@ -21,6 +19,7 @@ let winner = null;
 
 //functions
 const letterToSymbol = (letter) => letter === 'x' ? xSymbol : oSymbol;
+
 
 const handleWinning = function(letter){
   gameIsLive = false;
