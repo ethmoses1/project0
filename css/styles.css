@@ -2,9 +2,19 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
+/* the asterisk will select all selectors and give them a margin 0, and padding 0
+meaning it will remove all the default margin and padding for every object on the page*/
 * {
   margin: 0;
   padding: 0;
+  /*the default is content box/ the browser will account for any border and padding in the values you specify for an element's width and height */
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  background-color: #263238;
+  justify-content: center;
+  color: white;
 }
 
 header{
@@ -15,11 +25,6 @@ header{
   text-align: center;
   margin-bottom: 20px;
 
-}
-body {
-  background-color: #263238;
-  justify-content: center;
-  color: white;
 }
 
 main{
@@ -33,7 +38,6 @@ main{
 }
 
 .game {
-  vertical-align: middle;
   position: absolute;
   background-color: #424242;
   padding: 25px;
@@ -41,6 +45,26 @@ main{
   margin-top: 50px;
   margin-left: 90px;
 }
+
+
+.game-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 140px 140px 140px;
+  grid-template-rows: 140px 140px 140px;
+  grid-gap: 2px;
+}
+
+.square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 130px;
+  width: 130px;
+  background: #ff9933;
+  cursor: pointer;
+}
+
 
 .gameStatus-nextPlayer  {
   margin-top: 10px;
@@ -73,24 +97,6 @@ main{
   color: #4CAF50;
 }
 
-.game-grid {
-  margin-top: 30px;
-  display: grid;
-  grid-template-columns: 140px 140px 140px;
-  grid-template-rows: 140px 140px 140px;
-  grid-gap: 2px;
-}
-
-.square {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 130px;
-  width: 130px;
-  background: #ff9933;
-  cursor: pointer;
-}
-
 
 .x::after {
   content: '×';
@@ -102,7 +108,7 @@ main{
   font-size: 200px;
 }
 @media only screen and (max-width: 1024px){
-  .game-grid{
+  .game{
     margin-top: 20px;
     grid-gap: 1px;
   }

@@ -12,3 +12,7 @@ Players alternate placing Xs and Os on the game board until either opponent has 
 X always goes first and the first player to get 3 in a row (up, down, across, or diagonally) is the winner.
 In the event that no one has three in a row, the stalemate is called a cat game(draw).
 When all 9 squares are full, the game is over.
+
+
+#### Access the game
+The link to the game is [Tic Tac Toe](https://ethmoses1.github.io/project0/).
