@@ -1,5 +1,3 @@
-console.log('Helloworld');
-
 // HTML elements
 const gameStatus = document.querySelector('.gameStatus');
 const nextGame = document.querySelector('.nextGame');
@@ -10,12 +8,13 @@ const xSymbol = '×';
 const oSymbol = '○';
 //game variables
 let gameIsLive = true;
-let XisNext = true;
+let nextIsX = true;
 let winner = null;
 
 
 //functions
 const letterToSymbol = (letter) => letter === 'x' ? xSymbol : oSymbol;
+
 
 const handleWinning = function(letter){
   gameIsLive = false;
@@ -63,18 +62,20 @@ const checkGameStatus = function() {
 };
 
 //event handlers
+//event handler for the reset button
 const handleNextGame = function (e){
-  xIsNext = true;
+  nextIsX = true;
   gameStatus.innerHTML = `${xSymbol} is first`;
   winner = null;
-
-  for (const squareDiv of square){
-    squareDiv.classList.remove('x');
-    squareDiv.classList.remove('o');
-  }
-  console.log(e);
+// loop through the square array and store the elements in a variable
+for (let i = 0; i < square.length; i++) {
+     const squareDiv =  square[i]
+     squareDiv.classList.remove('x');
+     squareDiv.classList.remove('o');
+   }
 };
 
+//event handler for the squares being clicked
 const handleSquareClick = function(e){
   const classList = e.target.classList;
   const location = classList[1];
@@ -82,16 +83,16 @@ const handleSquareClick = function(e){
 if (classList[2] === 'x' || classList[2] === 'o') {
   return;
 }
-  if (XisNext) {
+  if (nextIsX) {
     classList.add('x');
     checkGameStatus();
 
-    XisNext = !XisNext;
+    nextIsX = !nextIsX;
   } else {
     classList.add('o');
     checkGameStatus();
 
-    XisNext = !XisNext;
+    nextIsX = !nextIsX;
   }
 }
 
