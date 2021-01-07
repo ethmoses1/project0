@@ -1,4 +1,4 @@
-#Tic Tac Toe
+## Tic Tac Toe
 ### What is Tic Tac Toe?
 Tic tac toe is a game that is played by two opponents( X and O) who seek to complete a row, a column, or a diagonal with either three X's or three O's drawn in a three by three squares.
 
