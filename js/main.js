@@ -65,7 +65,7 @@ const checkGameStatus = function() {
 //event handlers
 const handleNextGame = function (e){
   xIsNext = true;
-  gameStatus.innerHTML = `${xSymbol} is next`;
+  gameStatus.innerHTML = `${xSymbol} is first`;
   winner = null;
 
   for (const squareDiv of square){
