@@ -2,14 +2,17 @@
 // grab the html elements we need using the DOM
 const gameStatus = document.querySelector('.gameStatus');
 const nextGame = document.querySelector('.nextGame');
+const resetScore = document.querySelector('.resetScore');
 //grab all grid elements/squares which will be stored as an array
 const square = document.querySelectorAll('.square')
+const xResults = document.querySelector('.xResults')
+const oResults = document.querySelector('.oResults')
 
 
 
 // game variables
-const xSymbol = '×';
-const oSymbol = '○';
+const x = '×';
+const o = '○';
 
 //game variables 2
 let gameIsLive = true;
@@ -17,17 +20,26 @@ let nextIsX = true;
 let winner = null;
 
 
-//functions
-const letterToSymbol = (letter) => letter === 'x' ? xSymbol : oSymbol;
 
+//functions
+//co
+const letterToSymbol = (letter) => letter === 'x' ? x : o;
+
+countX = 0;
+countO = 0;
 
 const handleWinning = function(letter){
   gameIsLive = false;
   winner = letter;
+  console.log(countX, "first round")
   if (winner === 'x') {
+    countX ++
     gameStatus.innerHTML = `${letterToSymbol(winner)} has won!`;
+   xResults.innerHTML = `PlayerX: ${countX}`
   }else {
+    countO ++
     gameStatus.innerHTML = `<span>${letterToSymbol(winner)} has won!</span>`;
+     oResults.innerHTML = `PlayerO: ${countO}`;
   }
 };
 
@@ -70,7 +82,7 @@ const checkGameStatus = function() {
 //event handler for the reset button
 const handleNextGame = function (e){
   nextIsX = true;
-  gameStatus.innerHTML = `${xSymbol} is first`;
+  gameStatus.innerHTML = `${x} is first`;
   winner = null;
 // loop through the square array and store the elements in a variable
 for (let i = 0; i < square.length; i++) {
@@ -101,10 +113,28 @@ if (classList[2] === 'x' || classList[2] === 'o') {
   }
 };
 
+const handleScore = function(e){
+  console.log("works")
+  countX = 0
+  countO = 0
+  xResults.innerHTML = `PlayerX: ${countX}`
+  oResults.innerHTML = `PlayerO: ${countO}`;
+}
+
+
+// const h1 = document.createElement('h1');
+// const textAnswer = document.createTextNode("X Total Wins: " );
+// h1.setAttribute('id', 'X-wins');
+// h1.appendChild(textAnswer);
+// document.getElementById('x-results').appendChild(h1);
+
+
+
+
 // even listeners
 // set event listeners to the reset button and the nine square divs
 nextGame.addEventListener('click', handleNextGame);
-
+resetScore.addEventListener('click', handleScore);
 //loop through the squares and chick which square is being clicked
 for (let i = 0; i < square.length; i++) {
   squareDiv = square[i];

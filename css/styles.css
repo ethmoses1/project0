@@ -17,15 +17,6 @@ body {
   color: white;
 }
 
-header{
-  font-family: 'Kumar One Outline', cursive;
-  font-size: 25px;
-  margin-top: 50px;
-  margin-right: 60px;
-  text-align: center;
-  margin-bottom: 20px;
-
-}
 
 main{
   height: 1000px;
@@ -37,6 +28,30 @@ main{
   margin: auto;
 }
 
+header{
+  font-family: 'Kumar One Outline', cursive;
+  font-size: 25px;
+  margin-top: 50px;
+  margin-right: 60px;
+  text-align: center;
+  margin-bottom: 20px;
+};
+
+.wins{
+border: 3px solid black;
+display: flex;
+border: 1px solid black;
+padding: 10px;
+justify-content: space-around;
+}
+/* .wins div{
+  display: flex;
+  padding: 10px;
+  border: 1px solid black;
+  align-items: center;
+} */
+
+
 .game {
   position: absolute;
   background-color: #424242;
@@ -44,6 +59,7 @@ main{
   border-radius: 25px;
   margin-top: 50px;
   margin-left: 90px;
+  text-align: center;
 }
 
 
@@ -72,11 +88,10 @@ main{
 }
 
 .gameStatus {
-  border: 3px solid black;
+  border: 6px solid black;
   font-family: 'Orbitron', sans-serif;
   padding: 5px;
-  display: inline-block;
-  position: absolute;
+text-align: center;
   cursor: pointer;
 }
 
@@ -89,11 +104,29 @@ main{
   font-family: 'Orbitron', sans-serif;
   padding: 5px;
   display: inline-block;
-  margin-left: 280px;
+  /* margin-left: 280px; */
   cursor: pointer;
 }
 
 .nextGame:hover {
+  color: #4CAF50;
+}
+.gameStatus-nextPlayer{
+  display: flex;
+  justify-content: space-around;
+}
+
+.resetScore {
+  border: 3px solid black;
+  font-family: 'Orbitron', sans-serif;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  /* margin-left: 280px; */
+  cursor: pointer;
+}
+
+.resetScore:hover {
   color: #4CAF50;
 }
 
