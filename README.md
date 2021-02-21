@@ -15,4 +15,4 @@ When all 9 squares are full, the game is over.
 
 
 #### Access the game
-The link to the game is [Tic Tac Toe](https://ethmoses1.github.io/project0/).
+The link to the game is [Tic Tac Toe](https://ethmoses1.github.io/tic-tac-toe/).
